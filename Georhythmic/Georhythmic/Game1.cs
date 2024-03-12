@@ -6,16 +6,34 @@ namespace Georhythmic
 {
     public class Game1 : Game
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        //auto generated variables
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+
+        //game objects
+
 
         public Game1()
         {
-            _graphics = new GraphicsDeviceManager(this);
+            graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+
+            //set window size
+            graphics.PreferredBackBufferWidth = 1080;
+            graphics.PreferredBackBufferHeight = 1080;
+
+            //set framerate
+            TargetElapsedTime = System.TimeSpan.FromSeconds(1d / 60f);
+
+            //IsMouseVisible = true;
         }
 
+        /// <summary>
+        /// Allows the game to perform any initialization it needs to before starting to run.
+        /// This is where it can query for any required services and load any non-graphic
+        /// related content.  Calling base.Initialize will enumerate through any components
+        /// and initialize them as well.
+        /// </summary>
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
@@ -25,7 +43,7 @@ namespace Georhythmic
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
         }
